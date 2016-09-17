@@ -13,7 +13,7 @@
 <body ng-app="LunchCheck">
    <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
-
+     <h4>empty items are not considered</h4>
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
@@ -23,7 +23,9 @@
              <button class="btn btn-default" ng-click="checkHungry()">Check If Too Much</button>
          </div>
          <div class="form-group message">
-           {{output}}
+           <div id=result>
+             {{output}}
+           </div>
            <!-- Your message can go here. -->
          </div>
    </div>

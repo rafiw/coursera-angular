@@ -18,10 +18,16 @@ function LunchFuncChecker($scope) {
     $scope.test = size;
     if (size == 0) {
       $scope.output = "Please enter data first"
+      document.getElementById("result").style.color = "red";
+      document.getElementById("lunch-menu").style.borderColor = "red";
     } else if (size <= 3) {
       $scope.output = "Enjoy!";
+      document.getElementById("result").style.color = "green";
+      document.getElementById("lunch-menu").style.borderColor = "green";
     } else {
       $scope.output = "Too much!";
+      document.getElementById("result").style.color = "green";
+      document.getElementById("lunch-menu").style.borderColor = "green";
     }
   };
 };
