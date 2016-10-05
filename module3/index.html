@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .styleier {
+      float: right;;
+    }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="app.js"></script>
+<body ng-app="NarrowItDownApp">>
+   <div class="container" ng-controller="NarrowItDownController as list">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control" ng-model="list.searchTerm">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="list.getItems();">Narrow It Down For Me!</button>
+    </div>
+
+    <!-- Bonus loader (see Bonus section of the assignment) -->
+    <items-loader-indicator></items-loader-indicator>
+    <!-- found-items should be implemented as a component -->
+    <div class=styleier>
+    <found-items my-list="list.items" on-remove="list.removeItem(index)"
+    error={{list.errorMsg}}></></found-items>
+  </div>
+  </div>
+</body>
+</html>
