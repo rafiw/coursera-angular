@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="item in $ctrl.items">
+        <h3>{{item.name}} ({{item.short_name}})</h3>
+        {{item.description}}<br>
+        price:<b>{{item.price_large|currency}}</b>
+        <hr>
+    </li>
+</ul>
