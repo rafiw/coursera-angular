@@ -1,0 +1,18 @@
+<div class="container">
+<div ng-if="myInfoCtrl.userData">
+	<h2>Your registration information:</h2>
+	<h3>name: {{myInfoCtrl.userData.fname}}</h3>
+	<h3>last name: {{myInfoCtrl.userData.lname}}</h3>
+	<h3>phone: {{myInfoCtrl.userData.phone}}</h3>
+	<h3>email: {{myInfoCtrl.userData.email}}</h3>
+	<h3>menu: {{myInfoCtrl.userData.menu}}</h3>
+	<div>
+		<span>
+			<menu-item menu-item="myInfoCtrl.userData.dish"></menu-item>
+		</span>
+	</div>
+</div>
+<div ng-if="!myInfoCtrl.userData">
+<span>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></span>
+</div>
+</div>
