@@ -22,5 +22,14 @@ function SignUpController(MenuService) {
       ctrl.warn ='No such menu number exists';
     }) 
   }
+
+  ctrl.isValid = function() {
+      console.log('menu is '+ctrl.user.menu);
+      MenuService.getUserPref(ctrl.user.menu).then(function(response) {
+          ctrl.warn ='';
+        }, function (response) {
+          ctrl.warn ='No such menu number exists';
+        }) 
+      }
 }
 })();

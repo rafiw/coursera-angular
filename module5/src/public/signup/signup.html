@@ -32,9 +32,9 @@
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">#</span>
-					<input name="phone" ng-model="SignUpCtrl.user.phone" required ng-minlenght=2
+					<input name="phone" ng-model="SignUpCtrl.user.phone" required
 					pattern="(\d{3})-(\d{3})-(\d{4})"
-					type="text" class="form-control" placeholder="Phone ###-###-####"
+					type="text" class="form-control" placeholder="phone number ###-###-####"
 						aria-describedby="basic-addon1">
 					<p ng-show="signupForm.phone.$invalid && signupForm.phone.$touched" 
 						class="help-block">Enter a valid phone number.</p>
@@ -43,7 +43,7 @@
 					<span class="input-group-addon" id="basic-addon1">#</span>
 					<input name="menu" ng-model="SignUpCtrl.user.menu" required ng-minlenght=1
 					type="text" class="form-control" placeholder="favorite menu number"
-						aria-describedby="basic-addon1">
+						aria-describedby="basic-addon1" ng-change="SignUpCtrl.isValid()">
 						{{SignUpCtrl.warn}}
 				</div>
 				<input type="submit" class="btn btn-default btn-lg" 
